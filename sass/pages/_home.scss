@@ -1,0 +1,74 @@
+.section-about{
+    background-color: $color-grey-light;
+    padding: 25rem 0;
+    margin-top: -20vh;
+    @include responsive(tab-port){
+        padding: 20rem 0;
+    }
+    @include responsive(phone){
+        padding:20rem 0;
+    }
+}
+.section-features{
+    background-image: linear-gradient(to bottom right,rgba(75, 255, 75, 0.747), rgba(3, 109, 3, 0.795)),url('../Images/hero.jpg');
+    padding: 20rem 0;
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -8rem;
+    @include responsive(tab-port){
+        padding: 10rem 0;
+    }
+    @include responsive(phone){
+        padding: 8rem 0;
+    }
+    
+    &>*{
+        transform: skewY(7deg);
+        
+    }
+}
+.section-tours{
+    padding: 20rem 0 5rem 0;
+    background-color: $color-grey-light;
+    margin-top: -8rem;
+    @include responsive(tab-port){
+        padding: 15rem 0 3rem 0;
+    }
+    @include responsive(phone){
+        padding: 10rem 0 2rem 0;
+    }
+}
+.section-stories{
+    padding: 15rem 0;
+    background-color: transparent;
+    position: relative;
+    @include responsive(tab-port){
+        padding: 10rem 0;
+    }
+    @include responsive(phone){
+        padding: 5rem 0;
+    }
+}
+.section-book{
+    width: 100%;
+    padding: 12rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark);
+    @include responsive(tab-port){
+        padding: 8rem 0;
+    }
+}
+.section-book-form{
+    height: auto;
+    background-image:linear-gradient(105deg, 
+    rgba(255, 255, 255, 0.904) 0%, 
+    rgba(255, 255, 255, 0.904) 50%, 
+    transparent 50%) ,url('../Images/hero.jpg');
+    background-size: cover;
+
+    @include responsive(tab-port){
+        background-image:linear-gradient(to right, 
+    rgba(255, 255, 255, 0.904) 0%, 
+    rgba(255, 255, 255, 0.904) 100%, 
+    transparent 100%) ,url('../Images/nat-10.jpg');
+    }
+}

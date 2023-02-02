@@ -1,0 +1,39 @@
+@mixin clearfix {
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+//Responsiveness
+/*
+phone = 600px
+tab-port = 600 - 900px
+tab-land = 900 - 1200px
+Normal desktop display = 1200 - 1800px
+Big desktop = 1800+
+*/
+// in media queries rem unit will not be applied as the font-size of root,
+// so we are using em unit considering that 1 em = 16px 
+
+@mixin responsive($breakpoint){
+
+    @if $breakpoint == phone{
+        @media only screen and (max-width:37.5em) {@content};  //600px --> 600px / 1em or 16px 
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width:56.25em) {@content};  //900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width:75em) {@content};  //1200px
+    }
+
+    @if $breakpoint == big-desktop{
+        @media only screen and (min-width: 112.5em) {@content}; //1800px
+    }
+
+
+}

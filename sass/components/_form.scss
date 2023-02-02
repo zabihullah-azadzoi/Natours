@@ -1,0 +1,95 @@
+.form{
+    width: 50%;
+    padding: 6rem;
+   
+    @include responsive(tab-port){
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .group-input:not(:last-child){
+        margin-bottom: 2rem;
+        
+    }
+
+    .input{
+        padding: 1.2rem 2rem;
+        width: 90%;
+        font-size: 1.6rem;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.726);
+        display: inline-block;
+        border-radius: 0.2rem;
+        margin-bottom: .5rem;
+        outline: none;
+        
+        
+        @include responsive(tab-port){
+            width: 100%;
+        }
+
+        &:focus:invalid{
+            border-bottom: 0.3rem solid $color-secondary-light;
+        }
+        &:focus:not(:invalid){
+            border-bottom: 0.3rem solid $color-primary-light;
+        }
+        &:placeholder-shown +.label{
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-4rem);
+        }
+    }
+    .input-radio{
+        visibility: hidden;
+        
+    }
+    .label{
+        padding-left: 2rem;
+        font-size: 1.5rem;
+        display: inline-block;
+        transition: all .3s;
+    }
+
+    .label-radio{
+        font-size: 1.6rem;
+        // padding-left: 2rem;
+        cursor: pointer;
+        
+        .custome-radio{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: .35rem solid $color-primary-light;
+            display: inline-block;
+            margin-right:1rem ;
+            transform: translateY(.7rem);
+            position: relative;
+            &::after{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                width: 1.45rem;
+                height: 1.45rem;
+                border-radius: 50%;
+                background-color: $color-primary-light;
+                visibility: hidden;
+            }
+        }
+    }
+    .group-radio{
+        display: inline-block;
+        @include responsive(phone){
+           width: 100%;
+         }
+       
+    }
+    .input-radio:checked ~ .label-radio .custome-radio::after{
+        visibility: visible;
+    }
+    
+    
+}
